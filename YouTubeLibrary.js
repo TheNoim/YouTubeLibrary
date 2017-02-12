@@ -21,12 +21,6 @@ const PromiseEach = Promise.promisify(async.each);
 class YouTubeLibrary extends EventEmitter {
 
     /**
-     * @name ProgressHandler
-     * @function
-     * @param {object} state - State object of request-progress
-     */
-
-    /**
      * @description Nils little youtube library
      * @param APIKey API Key to access the youtube data api
      * @author Nils Bergmann <nilsbergmann@noim.io>
@@ -99,10 +93,44 @@ class YouTubeLibrary extends EventEmitter {
     }
 
     /**
+     * @typedef {Object} YouTubeVideoResource
+     * @property {string} kind Type (youtube#video)
+     * @property {string} etag
+     * @property {string} id VideoId
+     * @property {VideoSnippet} snippet
+     * @property {VideoStatistics} statistics
+     */
+
+    /**
+     * @typedef {Object} VideoSnippet
+     * @property {string} publishedAt Date in ISO 8601 format
+     * @property {string} channelId
+     * @property {string} title Video title
+     * @property {string} description
+     * @property {Object} thumbnails
+     * @property {string} channelTitle The displayname of the channel which published the video
+     * @property {string[]} tags List of tags for the video
+     * @property {string} categoryId https://developers.google.com/youtube/v3/docs/videoCategories/list
+     * @property {string} liveBroadcastContent
+     * @property {string} defaultLanguage
+     * @property {Object} localized
+     * @property {string} defaultAudioLanguage
+     */
+
+    /**
+     * @typedef {Object} VideoStatistics
+     * @property {int} viewCount
+     * @property {int} likeCount
+     * @property {int} dislikeCount
+     * @property {int} favoriteCount This property has been deprecated. The deprecation is effective as of August 28, 2015. The property's value is now always set to 0.
+     * @property {int} commentCount
+     */
+
+    /**
      *
      * @param {string|array} videoId
      * @param {Function} [Callback]
-     * @return {Promise<Array|Object>}
+     * @return {Promise<VideoSnippet|Array<VideoSnippet>>}
      */
     getVideoInformation(videoId, Callback) {
         const self = this;
@@ -163,8 +191,26 @@ class YouTubeLibrary extends EventEmitter {
      * @property {string} kind
      * @property {string} etag
      * @property {id} id
-     * @property {Object} snippet
-     * @property {Object} contentDetails
+     * @property {PlaylistSnippet} snippet
+     * @property {PlaylistContentDetails} contentDetails
+     */
+
+    /**
+     * @typedef {Object} PlaylistSnippet
+     * @property {string} publishedAt Date in ISO 8601 format
+     * @property {string} channelId
+     * @property {string} title
+     * @property {string} description
+     * @property {Object} thumbnails
+     * @property {string} channelTitle The displayname of the channel which published the playlist
+     * @property {Array<string>} tags List of tags for the playlist
+     * @property {string} defaultLanguage
+     * @property {Object} localized
+     */
+
+    /**
+     * @typedef {Object} PlaylistContentDetails
+     * @property {int} itemCount The count how much items the playlist contains
      */
 
     /**
