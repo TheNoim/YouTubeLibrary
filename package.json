@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Nils little youtube library",
   "main": "YouTubeLibrary.js",
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheNoim/YouTubeLibrary.git"
+  },
   "author": "Nils Bergmann <nilsbergmann@noim.io>",
   "license": "MIT",
   "keywords": [
