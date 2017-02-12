@@ -48,7 +48,6 @@
     * [.getChannelPlaylistsByUsername(Username, [Callback])](#YouTubeLibrary+getChannelPlaylistsByUsername) ⇒ <code>Promise.&lt;Array.&lt;PlayListWithVideos&gt;&gt;</code>
     * [.getChannel(channelID, [Callback])](#YouTubeLibrary+getChannel) ⇒ <code>Promise.&lt;Object&gt;</code>
     * [.getChannelByUsername(Username, [Callback])](#YouTubeLibrary+getChannelByUsername) ⇒ <code>Promise.&lt;Object&gt;</code>
-    * [.getAPIURL(kind, [querys])](#YouTubeLibrary+getAPIURL)
 
 <a name="new_YouTubeLibrary_new"></a>
 
@@ -63,6 +62,8 @@ Nils little youtube library
 <a name="YouTubeLibrary+getVideoInformation"></a>
 
 ### youTubeLibrary.getVideoInformation(videoId, [Callback]) ⇒ <code>Promise.&lt;(VideoSnippet\|Array.&lt;VideoSnippet&gt;)&gt;</code>
+Get the video information's of the videoId
+
 **Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
 | Param | Type |
@@ -73,7 +74,7 @@ Nils little youtube library
 <a name="YouTubeLibrary+searchOnYouTube"></a>
 
 ### youTubeLibrary.searchOnYouTube(SearchText, [type], [Order], [maxResults], [pages], [nextPageToken]) ⇒ <code>[Promise.&lt;searchListResponse&gt;](#searchListResponse)</code>
-Search on youtube
+Search on youtube with the given parameters
 
 **Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
@@ -89,7 +90,7 @@ Search on youtube
 <a name="YouTubeLibrary+getPlaylistInformation"></a>
 
 ### youTubeLibrary.getPlaylistInformation(playlistId, [Callback]) ⇒ <code>[Promise.&lt;PlaylistInformation&gt;](#PlaylistInformation)</code>
-GET the playlist Information`s without the videos
+Get all important information's of a playlist
 
 **Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
@@ -101,6 +102,8 @@ GET the playlist Information`s without the videos
 <a name="YouTubeLibrary+getPlaylist"></a>
 
 ### youTubeLibrary.getPlaylist(playlistId, [Callback]) ⇒ <code>Promise</code>
+Get all information's of a playlist including the videos. The videos are resolved to youtube#video
+
 **Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
 | Param | Type |
@@ -111,6 +114,8 @@ GET the playlist Information`s without the videos
 <a name="YouTubeLibrary+getPlaylistVideos"></a>
 
 ### youTubeLibrary.getPlaylistVideos(playlistId, [Callback]) ⇒ <code>Promise.&lt;Array&gt;</code>
+Get only the resolved videos of a playlist. Videos are in the format youtube#video
+
 **Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
 | Param | Type |
@@ -121,6 +126,8 @@ GET the playlist Information`s without the videos
 <a name="YouTubeLibrary+getChannelID"></a>
 
 ### youTubeLibrary.getChannelID(forUsername, [Callback]) ⇒ <code>Promise.&lt;String&gt;</code>
+Get the channelId of an username
+
 **Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
 | Param | Type |
@@ -131,6 +138,8 @@ GET the playlist Information`s without the videos
 <a name="YouTubeLibrary+getChannelPlaylists"></a>
 
 ### youTubeLibrary.getChannelPlaylists(channelId, [Callback]) ⇒ <code>Promise.&lt;Array.&lt;PlayListWithVideos&gt;&gt;</code>
+Get all playlist's of a channel. The videos are in the format youtube#video
+
 **Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
 | Param | Type |
@@ -141,6 +150,8 @@ GET the playlist Information`s without the videos
 <a name="YouTubeLibrary+getChannelPlaylistsByUsername"></a>
 
 ### youTubeLibrary.getChannelPlaylistsByUsername(Username, [Callback]) ⇒ <code>Promise.&lt;Array.&lt;PlayListWithVideos&gt;&gt;</code>
+Same as getChannelPlaylists() but you can use the channel username instead of the channel id
+
 **Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
 | Param | Type |
@@ -151,6 +162,8 @@ GET the playlist Information`s without the videos
 <a name="YouTubeLibrary+getChannel"></a>
 
 ### youTubeLibrary.getChannel(channelID, [Callback]) ⇒ <code>Promise.&lt;Object&gt;</code>
+Get channel information's
+
 **Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
 | Param | Type |
@@ -161,22 +174,14 @@ GET the playlist Information`s without the videos
 <a name="YouTubeLibrary+getChannelByUsername"></a>
 
 ### youTubeLibrary.getChannelByUsername(Username, [Callback]) ⇒ <code>Promise.&lt;Object&gt;</code>
+Same as getChannel() but you can use the channel username instead of the channel id
+
 **Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
 | Param | Type |
 | --- | --- |
 | Username |  | 
 | [Callback] | <code>function</code> | 
-
-<a name="YouTubeLibrary+getAPIURL"></a>
-
-### youTubeLibrary.getAPIURL(kind, [querys])
-**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| kind | <code>string</code> | For which purpose |
-| [querys] | <code>object</code> &#124; <code>string</code> | Query strings to append |
 
 <a name="YouTubeVideoResource"></a>
 

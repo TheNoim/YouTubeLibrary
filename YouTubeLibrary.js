@@ -127,7 +127,7 @@ class YouTubeLibrary extends EventEmitter {
      */
 
     /**
-     *
+     * @description Get the video information's of the videoId
      * @param {string|array} videoId
      * @param {Function} [Callback]
      * @return {Promise<VideoSnippet|Array<VideoSnippet>>}
@@ -172,7 +172,7 @@ class YouTubeLibrary extends EventEmitter {
      */
 
     /**
-     * @description Search on youtube
+     * @description Search on youtube with the given parameters
      * @param {string} SearchText
      * @param {string} [type=video,channel,playlist]
      * @param {string} [Order=relevance]
@@ -214,7 +214,7 @@ class YouTubeLibrary extends EventEmitter {
      */
 
     /**
-     * @description GET the playlist Information`s without the videos
+     * @description Get all important information's of a playlist
      * @param {string} playlistId
      * @param {Function} [Callback]
      * @return {Promise<PlaylistInformation>}
@@ -238,7 +238,7 @@ class YouTubeLibrary extends EventEmitter {
     }
 
     /**
-     *
+     * @description Get all information's of a playlist including the videos. The videos are resolved to youtube#video
      * @param {string} playlistId
      * @param {Function} [Callback]
      * @return {Promise}
@@ -257,7 +257,7 @@ class YouTubeLibrary extends EventEmitter {
     }
 
     /**
-     *
+     * @description Get only the resolved videos of a playlist. Videos are in the format youtube#video
      * @param {string} playlistId
      * @param {Function} [Callback]
      * @return {Promise<Array>}
@@ -280,7 +280,7 @@ class YouTubeLibrary extends EventEmitter {
     }
 
     /**
-     *
+     * @description Get the channelId of an username
      * @param {string} forUsername
      * @param {function} [Callback]
      * @return {Promise<String>}
@@ -323,7 +323,7 @@ class YouTubeLibrary extends EventEmitter {
      */
 
     /**
-     *
+     * @description Get all playlist's of a channel. The videos are in the format youtube#video
      * @param {string} channelId
      * @param {function} [Callback]
      * @return {Promise<PlayListWithVideos[]>}
@@ -349,7 +349,7 @@ class YouTubeLibrary extends EventEmitter {
     }
 
     /**
-     *
+     * @description Same as getChannelPlaylists() but you can use the channel username instead of the channel id
      * @param {string} Username
      * @param {function} [Callback]
      * @return {Promise<PlayListWithVideos[]>}
@@ -362,7 +362,7 @@ class YouTubeLibrary extends EventEmitter {
     }
 
     /**
-     *
+     * @description Get channel information's
      * @param {string} channelID
      * @param {function} [Callback]
      * @return {Promise<Object>}
@@ -385,7 +385,7 @@ class YouTubeLibrary extends EventEmitter {
     }
 
     /**
-     *
+     * @description Same as getChannel() but you can use the channel username instead of the channel id
      * @param Username
      * @param {function} [Callback]
      * @return {Promise<Object>}
@@ -501,6 +501,7 @@ class YouTubeLibrary extends EventEmitter {
      *
      * @param {string} kind - For which purpose
      * @param {object|string} [querys] - Query strings to append
+     * @private
      */
     getAPIURL(kind, querys) {
         return appendQuery(this.YoutubeDataAPI.urls[kind], querys);
