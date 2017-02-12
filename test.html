@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="bundle.min.js"></script>
+    <script>
+        var yt = new YTLib("AIzaSyC70VgL7HaF1DmGUINgCTFBZtRPKIR7fLg");
+        yt.getChannelID('GeilKind').then(id => {
+            return yt.getChannel(id);
+        }).then(Data => {
+            document.getElementsByTagName('body')[0].innerHTML = JSON.stringify(Data);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

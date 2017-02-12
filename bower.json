@@ -1,0 +1,25 @@
+{
+  "name": "YouTubeLibrary",
+  "description": "Nils little youtube library",
+  "main": "bundle.min.js",
+  "authors": [
+    "Nils Bergmann <nilsbergmann@noim.io>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "YouTube",
+    "Library",
+    "Data",
+    "API",
+    "Browser",
+    "Node"
+  ],
+  "homepage": "https://noim.io/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
