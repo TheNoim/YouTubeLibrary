@@ -1,6 +1,6 @@
 {
   "name": "little-ytlib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nils little youtube library",
   "main": "YouTubeLibrary.js",
   "repository": {
