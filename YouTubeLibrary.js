@@ -102,7 +102,7 @@ class YouTubeLibrary extends EventEmitter {
      *
      * @param {string|array} videoId
      * @param {Function} [Callback]
-     * @return {Promise<Array>|<Object>}
+     * @return {Promise<Array|Object>}
      */
     getVideoInformation(videoId, Callback) {
         const self = this;
