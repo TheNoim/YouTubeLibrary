@@ -30,151 +30,258 @@ const yt = new YTLib("MY_API_KEY");
 ### How do I known which methods I can use ?
 I think I doucmented the library very good with JSDoc. You can simply look in the source file on this repository (https://raw.githubusercontent.com/TheNoim/YouTubeLibrary/master/YouTubeLibrary.js)
 
+## Classes
 
-* * *
+<dl>
+<dt><a href="#YouTubeLibrary">YouTubeLibrary</a></dt>
+<dd></dd>
+</dl>
 
-## Class: YouTubeLibrary
+## Functions
+
+<dl>
+<dt><a href="#ProgressHandler">ProgressHandler(state)</a></dt>
+<dd></dd>
+</dl>
+
+## Typedefs
+
+<dl>
+<dt><a href="#YouTubePageInfo">YouTubePageInfo</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#searchListResponse">searchListResponse</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#PlaylistInformation">PlaylistInformation</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#Video">Video</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#PlayListWithVideos">PlayListWithVideos</a> : <code>Object</code></dt>
+<dd></dd>
+</dl>
+
+<a name="YouTubeLibrary"></a>
+
+## YouTubeLibrary
+**Kind**: global class  
+**Author:** Nils Bergmann <nilsbergmann@noim.io>  
+
+* [YouTubeLibrary](#YouTubeLibrary)
+    * [new YouTubeLibrary(APIKey)](#new_YouTubeLibrary_new)
+    * [.getVideoInformation(videoId, [Callback])](#YouTubeLibrary+getVideoInformation) ⇒ <code>Promise.&lt;(Array\|Object)&gt;</code>
+    * [.searchOnYouTube(SearchText, [type], [Order], [maxResults], [pages], [nextPageToken])](#YouTubeLibrary+searchOnYouTube) ⇒ <code>[Promise.&lt;searchListResponse&gt;](#searchListResponse)</code>
+    * [.getPlaylistInformation(playlistId, [Callback])](#YouTubeLibrary+getPlaylistInformation) ⇒ <code>[Promise.&lt;PlaylistInformation&gt;](#PlaylistInformation)</code>
+    * [.getPlaylist(playlistId, [Callback])](#YouTubeLibrary+getPlaylist) ⇒ <code>Promise</code>
+    * [.getPlaylistVideos(playlistId, [Callback])](#YouTubeLibrary+getPlaylistVideos) ⇒ <code>Promise.&lt;Array&gt;</code>
+    * [.getChannelID(forUsername, [Callback])](#YouTubeLibrary+getChannelID) ⇒ <code>Promise.&lt;String&gt;</code>
+    * [.getChannelPlaylists(channelId, [Callback])](#YouTubeLibrary+getChannelPlaylists) ⇒ <code>Promise.&lt;Array.&lt;PlayListWithVideos&gt;&gt;</code>
+    * [.getChannelPlaylistsByUsername(Username, [Callback])](#YouTubeLibrary+getChannelPlaylistsByUsername) ⇒ <code>Promise.&lt;Array.&lt;PlayListWithVideos&gt;&gt;</code>
+    * [.getChannel(channelID, [Callback])](#YouTubeLibrary+getChannel) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getChannelByUsername(Username, [Callback])](#YouTubeLibrary+getChannelByUsername) ⇒ <code>Promise.&lt;Object&gt;</code>
+    * [.getAPIURL(kind, [querys])](#YouTubeLibrary+getAPIURL)
+
+<a name="new_YouTubeLibrary_new"></a>
+
+### new YouTubeLibrary(APIKey)
 Nils little youtube library
 
-### YouTubeLibrary.getVideoInformation(videoId, Callback) 
 
-Nils little youtube library
+| Param | Description |
+| --- | --- |
+| APIKey | API Key to access the youtube data api |
 
-**Parameters**
+<a name="YouTubeLibrary+getVideoInformation"></a>
 
-**videoId**: `string | array`, Nils little youtube library
+### youTubeLibrary.getVideoInformation(videoId, [Callback]) ⇒ <code>Promise.&lt;(Array\|Object)&gt;</code>
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-**Callback**: `function`, Nils little youtube library
+| Param | Type |
+| --- | --- |
+| videoId | <code>string</code> &#124; <code>array</code> | 
+| [Callback] | <code>function</code> | 
 
-**Returns**: `Promise.&lt;(Array|Object)&gt;`
+<a name="YouTubeLibrary+searchOnYouTube"></a>
 
-### YouTubeLibrary.searchOnYouTube(SearchText, type, Order, maxResults, pages, nextPageToken) 
-
+### youTubeLibrary.searchOnYouTube(SearchText, [type], [Order], [maxResults], [pages], [nextPageToken]) ⇒ <code>[Promise.&lt;searchListResponse&gt;](#searchListResponse)</code>
 Search on youtube
 
-**Parameters**
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-**SearchText**: `string`, Search on youtube
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| SearchText | <code>string</code> |  |  |
+| [type] | <code>string</code> | <code>&quot;video,channel,playlist&quot;</code> |  |
+| [Order] | <code>string</code> | <code>&quot;relevance&quot;</code> |  |
+| [maxResults] | <code>int</code> | <code>20</code> | Max result per page |
+| [pages] | <code>int</code> | <code>10</code> | how many pages to query |
+| [nextPageToken] | <code>string</code> |  |  |
 
-**type**: `string`, Search on youtube
+<a name="YouTubeLibrary+getPlaylistInformation"></a>
 
-**Order**: `string`, Search on youtube
-
-**maxResults**: `int`, Max result per page
-
-**pages**: `int`, how many pages to query
-
-**nextPageToken**: `string`, Search on youtube
-
-**Returns**: `Promise.&lt;searchListResponse&gt;`
-
-### YouTubeLibrary.getPlaylistInformation(playlistId, Callback) 
-
+### youTubeLibrary.getPlaylistInformation(playlistId, [Callback]) ⇒ <code>[Promise.&lt;PlaylistInformation&gt;](#PlaylistInformation)</code>
 GET the playlist Information`s without the videos
 
-**Parameters**
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-**playlistId**: `string`, GET the playlist Information`s without the videos
+| Param | Type |
+| --- | --- |
+| playlistId | <code>string</code> | 
+| [Callback] | <code>function</code> | 
 
-**Callback**: `function`, GET the playlist Information`s without the videos
+<a name="YouTubeLibrary+getPlaylist"></a>
 
-**Returns**: `Promise.&lt;PlaylistInformation&gt;`
+### youTubeLibrary.getPlaylist(playlistId, [Callback]) ⇒ <code>Promise</code>
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-### YouTubeLibrary.getPlaylist(playlistId, Callback) 
+| Param | Type |
+| --- | --- |
+| playlistId | <code>string</code> | 
+| [Callback] | <code>function</code> | 
 
-Nils little youtube library
+<a name="YouTubeLibrary+getPlaylistVideos"></a>
 
-**Parameters**
+### youTubeLibrary.getPlaylistVideos(playlistId, [Callback]) ⇒ <code>Promise.&lt;Array&gt;</code>
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-**playlistId**: `string`, Nils little youtube library
+| Param | Type |
+| --- | --- |
+| playlistId | <code>string</code> | 
+| [Callback] | <code>function</code> | 
 
-**Callback**: `function`, Nils little youtube library
+<a name="YouTubeLibrary+getChannelID"></a>
 
-**Returns**: `Promise`
+### youTubeLibrary.getChannelID(forUsername, [Callback]) ⇒ <code>Promise.&lt;String&gt;</code>
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-### YouTubeLibrary.getPlaylistVideos(playlistId, Callback) 
+| Param | Type |
+| --- | --- |
+| forUsername | <code>string</code> | 
+| [Callback] | <code>function</code> | 
 
-Nils little youtube library
+<a name="YouTubeLibrary+getChannelPlaylists"></a>
 
-**Parameters**
+### youTubeLibrary.getChannelPlaylists(channelId, [Callback]) ⇒ <code>Promise.&lt;Array.&lt;PlayListWithVideos&gt;&gt;</code>
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-**playlistId**: `string`, Nils little youtube library
+| Param | Type |
+| --- | --- |
+| channelId | <code>string</code> | 
+| [Callback] | <code>function</code> | 
 
-**Callback**: `function`, Nils little youtube library
+<a name="YouTubeLibrary+getChannelPlaylistsByUsername"></a>
 
-**Returns**: `Promise.&lt;Array&gt;`
+### youTubeLibrary.getChannelPlaylistsByUsername(Username, [Callback]) ⇒ <code>Promise.&lt;Array.&lt;PlayListWithVideos&gt;&gt;</code>
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-### YouTubeLibrary.getChannelID(forUsername, Callback) 
+| Param | Type |
+| --- | --- |
+| Username | <code>string</code> | 
+| [Callback] | <code>function</code> | 
 
-Nils little youtube library
+<a name="YouTubeLibrary+getChannel"></a>
 
-**Parameters**
+### youTubeLibrary.getChannel(channelID, [Callback]) ⇒ <code>Promise.&lt;Object&gt;</code>
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-**forUsername**: `string`, Nils little youtube library
+| Param | Type |
+| --- | --- |
+| channelID | <code>string</code> | 
+| [Callback] | <code>function</code> | 
 
-**Callback**: `function`, Nils little youtube library
+<a name="YouTubeLibrary+getChannelByUsername"></a>
 
-**Returns**: `Promise.&lt;String&gt;`
+### youTubeLibrary.getChannelByUsername(Username, [Callback]) ⇒ <code>Promise.&lt;Object&gt;</code>
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-### YouTubeLibrary.getChannelPlaylists(channelId, Callback) 
+| Param | Type |
+| --- | --- |
+| Username |  | 
+| [Callback] | <code>function</code> | 
 
-Nils little youtube library
+<a name="YouTubeLibrary+getAPIURL"></a>
 
-**Parameters**
+### youTubeLibrary.getAPIURL(kind, [querys])
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
 
-**channelId**: `string`, Nils little youtube library
+| Param | Type | Description |
+| --- | --- | --- |
+| kind | <code>string</code> | For which purpose |
+| [querys] | <code>object</code> &#124; <code>string</code> | Query strings to append |
 
-**Callback**: `function`, Nils little youtube library
+<a name="ProgressHandler"></a>
 
-**Returns**: `Promise.&lt;Array.&lt;PlayListWithVideos&gt;&gt;`
+## ProgressHandler(state)
+**Kind**: global function  
 
-### YouTubeLibrary.getChannelPlaylistsByUsername(Username, Callback) 
+| Param | Type | Description |
+| --- | --- | --- |
+| state | <code>object</code> | State object of request-progress |
 
-Nils little youtube library
+<a name="YouTubePageInfo"></a>
 
-**Parameters**
+## YouTubePageInfo : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
 
-**Username**: `string`, Nils little youtube library
+| Name | Type |
+| --- | --- |
+| totalResults | <code>int</code> | 
+| resultsPerPage | <code>int</code> | 
 
-**Callback**: `function`, Nils little youtube library
+<a name="searchListResponse"></a>
 
-**Returns**: `Promise.&lt;Array.&lt;PlayListWithVideos&gt;&gt;`
+## searchListResponse : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
 
-### YouTubeLibrary.getChannel(channelID, Callback) 
+| Name | Type |
+| --- | --- |
+| kind | <code>string</code> | 
+| etag | <code>string</code> | 
+| nextPageToken | <code>string</code> | 
+| regionCode | <code>string</code> | 
+| pageInfo | <code>[YouTubePageInfo](#YouTubePageInfo)</code> | 
+| items | <code>Array</code> | 
 
-Nils little youtube library
+<a name="PlaylistInformation"></a>
 
-**Parameters**
+## PlaylistInformation : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
 
-**channelID**: `string`, Nils little youtube library
+| Name | Type |
+| --- | --- |
+| kind | <code>string</code> | 
+| etag | <code>string</code> | 
+| id | <code>id</code> | 
+| snippet | <code>Object</code> | 
+| contentDetails | <code>Object</code> | 
 
-**Callback**: `function`, Nils little youtube library
+<a name="Video"></a>
 
-**Returns**: `Promise.&lt;Object&gt;`
+## Video : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
 
-### YouTubeLibrary.getChannelByUsername(Username, Callback) 
+| Name | Type |
+| --- | --- |
+| kind | <code>string</code> | 
+| etag | <code>string</code> | 
+| id | <code>string</code> | 
+| snippet | <code>Object</code> | 
+| contentDetails | <code>Object</code> | 
+| statistics | <code>Object</code> | 
 
-Nils little youtube library
+<a name="PlayListWithVideos"></a>
 
-**Parameters**
+## PlayListWithVideos : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
 
-**Username**: , Nils little youtube library
-
-**Callback**: `function`, Nils little youtube library
-
-**Returns**: `Promise.&lt;Object&gt;`
-
-### YouTubeLibrary.getAPIURL(kind, querys) 
-
-Nils little youtube library
-
-**Parameters**
-
-**kind**: `string`, For which purpose
-
-**querys**: `object | string`, Query strings to append
-
-
-
-
-* * *
+| Name | Type |
+| --- | --- |
+| kind | <code>string</code> | 
+| etag | <code>string</code> | 
+| id | <code>string</code> | 
+| snippet | <code>Object</code> | 
+| contentDetails | <code>Object</code> | 
+| videos | <code>[Array.&lt;Video&gt;](#Video)</code> | 
