@@ -85,7 +85,7 @@ I think I doucmented the library very good with JSDoc. You can simply look in th
     * [.getChannelPlaylistsByUsername(Username, [Callback])](#YouTubeLibrary+getChannelPlaylistsByUsername) ⇒ <code>Promise.&lt;Array.&lt;PlayListWithVideos&gt;&gt;</code>
     * [.getChannel(channelID, [Callback])](#YouTubeLibrary+getChannel) ⇒ <code>Promise.&lt;Object&gt;</code>
     * [.getChannelByUsername(Username, [Callback])](#YouTubeLibrary+getChannelByUsername) ⇒ <code>Promise.&lt;Object&gt;</code>
-
+    * [.getI18nLanguages(hl, [Callback])](#YouTubeLibrary+getI18nLanguages) ⇒ <code>Promise.&lt;Object&gt;</code>
 <a name="new_YouTubeLibrary_new"></a>
 
 ### new YouTubeLibrary(APIKey)
