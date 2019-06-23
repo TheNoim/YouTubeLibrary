@@ -48,7 +48,8 @@ class YouTubeLibrary extends EventEmitter {
                 "playlists": `https://www.googleapis.com/youtube/v3/playlists?key=${this.APIKey}`,
                 "playlistItems": `https://www.googleapis.com/youtube/v3/playlistItems?key=${this.APIKey}`,
                 "search": `https://www.googleapis.com/youtube/v3/search?key=${this.APIKey}`,
-                "channels": `https://www.googleapis.com/youtube/v3/channels?key=${this.APIKey}`
+                "channels": `https://www.googleapis.com/youtube/v3/channels?key=${this.APIKey}`,
+                "I18nLanguages": `https://www.googleapis.com/youtube/v3/i18nLanguages?key=${this.APIKey}`
             },
             "parts": {
                 "videos": [
@@ -68,6 +69,9 @@ class YouTubeLibrary extends EventEmitter {
                     'id'
                 ],
                 "search": [
+                    "snippet"
+                ],
+                "I18nLanguages": [
                     "snippet"
                 ],
                 "channels": [
@@ -90,6 +94,7 @@ class YouTubeLibrary extends EventEmitter {
         this.getChannelByUsername = oc(this.getChannelByUsername);
         this.getChannelPlaylists = oc(this.getChannelPlaylists);
         this.getChannelPlaylistsByUsername = oc(this.getChannelPlaylistsByUsername);
+        this.getI18nLanguages = oc(this.getI18nLanguages);
     }
 
     /**
@@ -394,6 +399,29 @@ class YouTubeLibrary extends EventEmitter {
         const self = this;
         return self.getChannelID(Username).then(id => {
             return self.getChannel(id);
+        });
+    }
+
+    /**
+     * @description Returns a list of application languages that the YouTube website supports
+     * @param {string} specifies the language that should be used. The default value is en_US.
+     * @param {Function} [Callback]
+     * @return {Promise<VideoSnippet|Array<VideoSnippet>>}
+     */
+    getI18nLanguages(hl, Callback) {
+        const self = this;
+        return new Promise((resolve, reject) => {
+            let Querys = {
+                "part": this.YoutubeDataAPI.parts.I18nLanguages.join(',')
+            };
+            if (typeof hl == "string") {
+                Querys["hl"] = hl;
+            } else {
+                return reject(`The type of hl is ${typeof hl}. Allowed is string or array.`);
+            }
+            self._requestWithNextPage(self.getAPIURL('I18nLanguages', Querys)).then((Data) => {
+                resolve(Data.items);         
+            }).catch((e) => reject(e));
         });
     }
 
