@@ -63,6 +63,8 @@ I think I doucmented the library very good with JSDoc. You can simply look in th
 <dd></dd>
 <dt><a href="#PlayListWithVideos">PlayListWithVideos</a> : <code>Object</code></dt>
 <dd></dd>
+<dt><a href="#I18nLanguages">I18nLanguages</a> : <code>Object</code></dt>
+<dd></dd>
 </dl>
 
 <a name="YouTubeLibrary"></a>
@@ -218,6 +220,18 @@ Same as getChannel() but you can use the channel username instead of the channel
 | Username |  | 
 | [Callback] | <code>function</code> | 
 
+<a name="YouTubeLibrary+getI18nLanguages"></a>
+
+### youTubeLibrary.getI18nLanguages(hl, [Callback]) ⇒ <code>Promise.&lt;Object&gt;</code>
+Returns a list of application languages that the YouTube website supports. hl specifies the language that should be used
+
+**Kind**: instance method of <code>[YouTubeLibrary](#YouTubeLibrary)</code>  
+
+| Param | Type |
+| --- | --- |
+| hl |  | 
+| [Callback] | <code>function</code> | 
+
 <a name="YouTubeVideoResource"></a>
 
 ## YouTubeVideoResource : <code>Object</code>
@@ -365,3 +379,16 @@ Same as getChannel() but you can use the channel username instead of the channel
 | contentDetails | <code>Object</code> | 
 | videos | <code>[Array.&lt;Video&gt;](#Video)</code> | 
 
+<a name="I18nLanguages"></a>
+
+## I18nLanguages : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| kind | <code>string</code> | 
+| etag | <code>string</code> | 
+| hl | <code>string</code> | 
+| snippet | <code>Object</code> | 
+| name | <code>string</code> | 
