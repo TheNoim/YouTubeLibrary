@@ -1,6 +1,6 @@
 var YTLib = require('./YouTubeLibrary')
 
-var yt = new YTLib("AIzaSyA1Sr6O7aFDEtLzcURqIcGG3-3VRQqXNGg");
+var yt = new YTLib("...");
 yt.getI18nLanguages('es_MX').then(data => {
     console.log(data)
 }).catch(err =>{
